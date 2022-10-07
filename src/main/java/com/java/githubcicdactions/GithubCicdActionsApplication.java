@@ -12,7 +12,7 @@ public class GithubCicdActionsApplication {
 		return "Welcome to Github Actions";
 	}
 	public static void main(String[] args) {
-		SpringApplication.run( args);
+		SpringApplication.run(GithubCicdActionsApplication.class, args);
 	}
 
 }

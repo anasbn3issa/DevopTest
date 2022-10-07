@@ -11,10 +11,23 @@ pipeline {
         }
     }
     post {
-        failure {
-            emailext body: 'Build FAILED',
-                subject: 'Build FAILED',
-                to: 'mohamedanas.benaissa@esprit.tn'
-        }
+        always {  
+             echo 'This will always run'  
+         }  
+        failure {  
+             mail bcc: '', body: "<b>BUILD FAILED</b>", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html',  subject: "BUILD FAILED", to: "mohamedanas.benaissa@esprit.tn";  
+         }  
     }
 }
+
+ pipeline {  
+     agent any  
+     stages {  
+         stage('Test') {  
+             steps {  
+                 sh 'echo "Fail!"; exit 1'  
+             }  
+         }  
+     }  
+     
+ }
