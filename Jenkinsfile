@@ -4,7 +4,9 @@ pipeline {
         stage('test mvn') {
             steps {
                 echo 'mvn --version'
-                echo 'tik tak 7'
+                sh """ mvn clean install """;
+                sh """ mvn clean test """;
+                echo 'tik tak 10'
             }
         }
     }
