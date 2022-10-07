@@ -4,7 +4,7 @@ pipeline {
         stage('test mvn') {
             steps {
                 echo 'mvn --version'
-                echo 'tik tak 6'
+                echo 'tik tak 7'
             }
         }
     }
